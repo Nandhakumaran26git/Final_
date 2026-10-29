@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { routesApi } from '../api/client';
-import { 
-  Navigation, 
-  MapPin, 
-  Compass, 
-  ArrowRight, 
-  Info, 
+import {
+  Navigation,
+  MapPin,
+  Compass,
+  ArrowRight,
+  Info,
   AlertTriangle,
   Truck
 } from 'lucide-react';
@@ -90,7 +90,7 @@ export const RouteMapPage = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      
+
       {/* Header */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-lightBorder pb-6">
         <div>
@@ -115,7 +115,7 @@ export const RouteMapPage = () => {
       {/* Route Selector Controls */}
       <div className="card-warm p-6">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
-          
+
           <div className="md:col-span-5 space-y-1.5 text-left">
             <label className="text-xs font-semibold uppercase tracking-wider text-mutedText flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-primaryGreen" />
@@ -169,22 +169,34 @@ export const RouteMapPage = () => {
         <div className="flex flex-wrap items-center gap-2 pt-4 mt-4 border-t border-lightBorder text-xs text-mutedText">
           <span className="font-semibold text-darkText">Sample Route Demos:</span>
           <button
-            onClick={() => { setSourceNodeId(1); setTargetNodeId(2); handleCalculate(1, 2); }}
+            onClick={() => { setSourceNodeId(1); setTargetNodeId(3); handleCalculate(1, 3); }}
             className="px-2.5 py-1 rounded-lg bg-cream-100 hover:bg-cream-200 font-medium"
           >
-            Direct: Erode Jn → Bus Stand (2.8 km)
+            Direct: Erode Jn → Thindal (7.3 km)
           </button>
           <button
             onClick={() => { setSourceNodeId(1); setTargetNodeId(7); handleCalculate(1, 7); }}
             className="px-2.5 py-1 rounded-lg bg-cream-100 hover:bg-cream-200 font-medium"
           >
-            Multi-hop: Erode Jn → Perundurai (18.8 km)
+            Multi-hop: Erode Jn → Perundurai (20.6 km)
+          </button>
+          <button
+            onClick={() => { setSourceNodeId(7); setTargetNodeId(10); handleCalculate(7, 10); }}
+            className="px-2.5 py-1 rounded-lg bg-cream-100 hover:bg-cream-200 font-medium"
+          >
+            Perundurai → Gobi Direct (32.5 km)
+          </button>
+          <button
+            onClick={() => { setSourceNodeId(10); setTargetNodeId(4); handleCalculate(10, 4); }}
+            className="px-2.5 py-1 rounded-lg bg-cream-100 hover:bg-cream-200 font-medium"
+          >
+            Gobi → Nasiyanur (30.0 km)
           </button>
           <button
             onClick={() => { setSourceNodeId(5); setTargetNodeId(10); handleCalculate(5, 10); }}
             className="px-2.5 py-1 rounded-lg bg-cream-100 hover:bg-cream-200 font-medium"
           >
-            Chithode → Gobi via Kavindapadi (27.6 km)
+            Chithode → Gobi via Kavindapadi (29.0 km)
           </button>
           <button
             onClick={() => { setSourceNodeId(1); setTargetNodeId(11); handleCalculate(1, 11); }}
@@ -295,10 +307,10 @@ export const RouteMapPage = () => {
                       isSource
                         ? '#217A43'
                         : isTarget
-                        ? '#F58220'
-                        : inPath
-                        ? '#F58220'
-                        : '#14532D'
+                          ? '#F58220'
+                          : inPath
+                            ? '#F58220'
+                            : '#14532D'
                     }
                     stroke="#FFFFFF"
                     strokeWidth="2.5"
@@ -347,11 +359,10 @@ export const RouteMapPage = () => {
               </p>
             </div>
 
-            <div className={`p-3 rounded-xl border text-xs max-w-xs ${
-              Number(routeResult.totalDistanceKm) <= 15
-                ? 'bg-softGreen/30 border-softGreen text-forest'
-                : 'bg-orange-50 border-orange-200 text-orange-950'
-            }`}>
+            <div className={`p-3 rounded-xl border text-xs max-w-xs ${Number(routeResult.totalDistanceKm) <= 15
+              ? 'bg-softGreen/30 border-softGreen text-forest'
+              : 'bg-orange-50 border-orange-200 text-orange-950'
+              }`}>
               <div className="flex items-center gap-1.5 font-bold mb-0.5">
                 <Truck className="w-4 h-4 text-primaryGreen shrink-0" />
                 <span>15 km Transport Policy</span>
@@ -371,13 +382,12 @@ export const RouteMapPage = () => {
             <div className="flex flex-wrap items-center gap-2">
               {routeResult.orderedNodeNames?.map((name, i) => (
                 <React.Fragment key={i}>
-                  <span className={`px-3 py-1 rounded-xl text-xs font-bold border ${
-                    i === 0
-                      ? 'bg-primaryGreen text-white border-primaryGreen'
-                      : i === routeResult.orderedNodeNames.length - 1
+                  <span className={`px-3 py-1 rounded-xl text-xs font-bold border ${i === 0
+                    ? 'bg-primaryGreen text-white border-primaryGreen'
+                    : i === routeResult.orderedNodeNames.length - 1
                       ? 'bg-orangeAccent text-white border-orangeAccent'
                       : 'bg-cream-100 text-forest border-lightBorder'
-                  }`}>
+                    }`}>
                     {name}
                   </span>
                   {i < routeResult.orderedNodeNames.length - 1 && (

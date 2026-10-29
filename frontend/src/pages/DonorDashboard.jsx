@@ -535,19 +535,18 @@ export const DonorDashboard = () => {
                 </span>
               </div>
 
-              {/* Quick Preset Chips - All strictly 4 hours or more */}
-              <div className="grid grid-cols-4 gap-2 mb-2">
+              {/* Quick Preset Chips */}
+              <div className="grid grid-cols-3 gap-2 mb-2">
                 {[
                   { label: '4 Hours (Min)', hours: 4 },
                   { label: '6 Hours (Rec)', hours: 6 },
                   { label: '12 Hours', hours: 12 },
-                  { label: '24 Hours', hours: 24 },
                 ].map((item) => (
                   <button
                     key={item.hours}
                     type="button"
                     onClick={() => calculateDeadline(item.hours)}
-                    className={`py-2 px-1 rounded-xl border text-xs font-semibold text-center transition-all ${
+                    className={`py-2 px-2 rounded-xl border text-xs font-semibold text-center transition-all ${
                       freshHours === item.hours
                         ? 'bg-forest text-white border-forest shadow-sm'
                         : 'bg-white border-lightBorder text-darkText hover:bg-cream-100'

@@ -146,35 +146,29 @@ INSERT INTO vehicles (id, volunteer_profile_id, vehicle_type, registration_numbe
 -- Illustrative sample road graph for Erode region
 -- ----------------------------------------------------------------------------
 INSERT INTO road_nodes (id, node_code, node_name, area_name, latitude, longitude) VALUES
-(1, 'NODE_ERODE_JN', 'Erode Railway Junction', 'Erode Central', 11.3392, 77.7172),
-(2, 'NODE_ERODE_BS', 'Erode Central Bus Stand', 'Erode Central', 11.3410, 77.7280),
+(1, 'NODE_ERODE_JN', 'Erode Railway Station', 'Erode Central', 11.3392, 77.7172),
 (3, 'NODE_THINDAL', 'Thindal Murugan Temple Jn', 'Thindal', 11.3280, 77.6780),
 (4, 'NODE_NASIYANUR', 'Nasiyanur Ring Junction', 'Nasiyanur', 11.3520, 77.6320),
 (5, 'NODE_CHITHODE', 'Chithode NH544 Junction', 'Chithode', 11.4110, 77.6690),
 (6, 'NODE_BHAVANI', 'Bhavani Old Bus Stand', 'Bhavani', 11.4480, 77.6830),
 (7, 'NODE_PERUNDURAI_TOWN', 'Perundurai New Bus Stand', 'Perundurai', 11.2790, 77.5890),
-(8, 'NODE_PERUNDURAI_SIPCOT', 'Perundurai SIPCOT Phase II', 'Perundurai', 11.2750, 77.5850),
 (9, 'NODE_KAVINDAPADI', 'Kavindapadi Sugar Mill Road', 'Kavindapadi', 11.4310, 77.5520),
 (10, 'NODE_GOBI_BS', 'Gobichettipalayam Bus Stand', 'Gobichettipalayam', 11.4540, 77.4360),
 (11, 'NODE_ISOLATED_TEST', 'Isolated Research Depot (Unreachable)', 'Outer Boundary', 11.5500, 77.8500);
 
--- Road connections (Edges) with Google Maps verified driving distances in km
+-- Road connections (11 Edges) with Google Maps verified driving distances in km
 INSERT INTO road_edges (id, source_node_id, target_node_id, road_name, distance_km, is_bidirectional) VALUES
-(1, 1, 2, 'EVN Road / Gandhiji Road', 2.80, TRUE),
-(2, 2, 3, 'Perundurai Road (Town Section)', 6.50, TRUE),
-(3, 3, 4, 'Thindal-Nasiyanur Link Road', 5.60, TRUE),
-(4, 4, 7, 'NH544 Expressway Southern Wing', 10.50, TRUE),
-(5, 7, 8, 'SIPCOT Industrial Main Road', 6.80, TRUE),
-(6, 2, 5, 'Erode-Bhavani Road via BP Agraharam', 10.50, TRUE),
-(7, 5, 6, 'NH544 Bhavani River Bridge Link', 6.50, TRUE),
-(8, 5, 4, 'Chithode-Nasiyanur Bypass Link', 7.50, TRUE),
-(9, 5, 9, 'Chithode-Kavindapadi State Highway', 12.80, TRUE),
-(10, 6, 9, 'Bhavani-Kavindapadi Road', 15.50, TRUE),
-(11, 9, 10, 'Kavindapadi-Gobi State Highway', 14.80, TRUE),
-(12, 7, 10, 'Perundurai-Thingalur-Gobi Highway', 31.50, TRUE),
-(13, 1, 3, 'Brough Road - Perundurai Road Direct', 7.00, TRUE),
-(14, 4, 9, 'Nasiyanur-Kavindapadi Rural Arterial Road', 18.50, TRUE),
-(15, 3, 7, 'SH96 Perundurai Road Direct', 11.80, TRUE);
+(1, 10, 9, 'Kavindapadi-Gobi State Highway', 14.90, TRUE),
+(2, 9, 6, 'Bhavani-Kavindapadi Road', 14.90, TRUE),
+(3, 9, 5, 'Chithode-Kavindapadi State Highway', 14.10, TRUE),
+(4, 5, 6, 'NH544 Bhavani River Bridge Link', 7.40, TRUE),
+(5, 5, 4, 'Chithode-Nasiyanur Bypass Link', 7.50, TRUE),
+(6, 5, 1, 'Erode Jn - Chithode Road via BP Agraharam', 12.10, TRUE),
+(7, 4, 7, 'NH544 Expressway Southern Wing', 10.50, TRUE),
+(8, 7, 3, 'SH96 Perundurai Road Direct', 13.30, TRUE),
+(9, 3, 1, 'Brough Road - Perundurai Road Direct', 7.30, TRUE),
+(10, 10, 4, 'Gobi - Nasiyanur Road via Thingalur', 30.00, TRUE),
+(11, 10, 7, 'Gobi - Perundurai Direct Road (SH-81)', 32.50, TRUE);
 
 -- ----------------------------------------------------------------------------
 -- 7. FOOD DONATIONS (22 records)
