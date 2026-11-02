@@ -3,7 +3,7 @@
 ## 1. System Overview
 NourishNet is a full-stack, three-tier web application built with a decoupled architecture:
 1. **Presentation Layer**: Single Page Application (SPA) using React 18, TypeScript, Tailwind CSS, Vite, and Lucide React icons.
-2. **Application / Business Layer**: Java 21/25 with Spring Boot 3.3+, Spring Web REST API, Spring Security, BCrypt, and Hibernate/JPA.
+2. **Application / Business Layer**: Java 25 with Spring Boot 3.3+, Spring Web REST API, Spring Security, BCrypt, and Hibernate/JPA.
 3. **Data Layer**: MySQL 8.0+ relational database managed via MySQL Workbench.
 
 ```
@@ -81,7 +81,7 @@ Cancelled deliveries move to `CANCELLED`, freeing up or recording waste as appro
 | Frontend | Styling | Tailwind CSS 3.4 (Curated Palette: #FBF7EE, #14532D, #217A43, #F58220) |
 | Frontend | Icons | Lucide React |
 | Frontend | Routing | React Router DOM v6 |
-| Backend | Language | Java 21 / 25 |
+| Backend | Language | Java 25 |
 | Backend | Framework | Spring Boot 3.3.4 |
 | Backend | ORM | Spring Data JPA / Hibernate |
 | Backend | Security | Spring Security 6 + JJWT 0.12.5 |

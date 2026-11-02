@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -45,12 +45,12 @@ const NotFoundPage = () => {
       <p className="text-sm text-mutedText max-w-md mb-6">
         The page you are looking for does not exist or has been moved within the NourishNet network.
       </p>
-      <a
-        href="/"
+      <Link
+        to="/"
         className="px-6 py-2.5 bg-forest text-white text-sm font-semibold rounded-xl hover:bg-primaryGreen transition-colors shadow-sm"
       >
         Return to Homepage
-      </a>
+      </Link>
     </div>
   );
 };
@@ -58,7 +58,7 @@ const NotFoundPage = () => {
 export const App = () => {
   return (
     <AuthProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <div className="min-h-screen flex flex-col bg-[#FBF7EE] text-darkText font-sans selection:bg-softGreen selection:text-forest">
           <Navbar />
           <div className="flex-1">

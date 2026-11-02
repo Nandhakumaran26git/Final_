@@ -28,7 +28,7 @@ Every day, substantial quantities of wholesome, edible cooked and packaged food 
 - **HTTP Client**: Axios with JWT interceptors
 
 ### Backend
-- **Platform**: Java 21 LTS / Spring Boot 3.3.4
+- **Platform**: Java 25 LTS / Spring Boot 3.3.4
 - **Security**: Spring Security 6 with JJWT (`io.jsonwebtoken:0.12.5`) and BCrypt password hashing
 - **Persistence**: Spring Data JPA & Hibernate with schema validation (`ddl-auto=validate`)
 - **Algorithms**: Native Dijkstra Shortest Path algorithm implemented in Java (`DijkstraService`)
@@ -130,7 +130,7 @@ The relational database `nourishnet` is designed to be executed manually in **My
 ## 7. Step-by-Step Setup Guide
 
 ### Prerequisites
-- **Java Development Kit (JDK)**: Java 21 or higher installed (`java -version`).
+- **Java Development Kit (JDK)**: Java 25 LTS installed (`java -version`).
 - **Apache Maven**: Maven 3.8+ installed (`mvn -version`).
 - **Node.js & npm**: Node.js 18+ installed (`node -v`).
 - **MySQL Server**: MySQL 8.0+ installed and running on port `3306`.
